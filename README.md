@@ -5,7 +5,7 @@
 ---
 
 <p align="center"> 
-    <img src="https://github.com/ldery/ATTITTUD/blob/main/eatmt" width="800">
+    <img src="https://github.com/ldery/ATTITTUD/main/eatmt.png" width="800">
 </p>
 
 ## Links
