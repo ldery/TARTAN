@@ -1,6 +1,6 @@
 # Should we be Pre-Training ? Exploring End-Task Aware Training In Lieu of Continued Pre-training
 
-[Coming Soon] This repository contains the source code for the paper [Should we be Pre-Training ? Exploring End-Task Aware Training In Lieu of Continued Pre-training](https://openreview.net/forum?id=2bO2x8NAIMB), by Lucio M Dery, Paul Michel, Ameet Talwalkar and Graham Neubig (ICLR 2022).
+This repository contains the source code for the paper [Should we be Pre-Training ? Exploring End-Task Aware Training In Lieu of Continued Pre-training](https://openreview.net/forum?id=2bO2x8NAIMB), by Lucio M Dery, Paul Michel, Ameet Talwalkar and Graham Neubig (ICLR 2022).
 
 ---
 
@@ -24,16 +24,24 @@ url={https://openreview.net/forum?id=2bO2x8NAIMB}
 ```
 
 ## Installation Instructions
-Coming Soon
+This repo builds off the Don't Stop Pre-training paper repo [here](https://github.com/allenai/dont-stop-pretraining). 
+Please follow their installation instructions. Repeated here for ease:
+
+conda env create -f environment.yml
+conda activate domains
 
 ## Running
+Our experiments were run on A6000 and A100 gpus which have > 40G gpu memory. To ensure that batches fit into memory, consider modifying the following variables
 
 ### To obtain results on sample datasets
 
 #### Baseline 
-Coming Soon
+We used the TAPT baseline from the Don't Stop Pre-training paper. To reproduce this baseline, please follow the instructions in their repo [here](https://github.com/allenai/dont-stop-pretraining) - to download and run their pre-trained models.
 
 
-##### Ours 
-Coming Soon
-[]
+#### Ours 
+###### MT-TARTAN
+./run_mt_multiple.sh {task} {outdir} {gpuid} {startseed} {endseed}
+
+###### META-TARTAN
+./run_meta_multiple.sh {task} {outdir} {gpuid} {startseed} {endseed}
