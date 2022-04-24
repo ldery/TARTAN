@@ -47,9 +47,18 @@ Our experiments were run on A6000 and A100 gpus which have > 40G gpu memory. To 
 We used the TAPT baseline from the Don't Stop Pre-training paper. To reproduce this baseline, please follow the instructions in their repo [here](https://github.com/allenai/dont-stop-pretraining) - to download and run their pre-trained models.
 
 
-#### Ours 
+#### Ours
 ###### MT-TARTAN
-./run_mt_multiple.sh {task} {outdir} {gpuid} {startseed} {endseed}
+./run_mt_multiple.sh {task} {output_dir} {gpuid} {startseed} {endseed}
 
 ###### META-TARTAN
-./run_meta_multiple.sh {task} {outdir} {gpuid} {startseed} {endseed}
+./run_meta_multiple.sh {task} {output_dir} {gpuid} {startseed} {endseed}
+
+###### MULTIPLE MLM AUXILIARY TASKS
+Modify the following lines in \*.sh files to allow mlm auxiliary tasks based on multiple datasets :
+
+```bash
+--train_data_file [file1 file2 file3] 
+--aux-task-names  [MLM1 MLM2 MLM3]
+```
+note that the data used for DAPT auxiliary tasks can be found in datasets/{task}/domain.NxTAPT.txt
