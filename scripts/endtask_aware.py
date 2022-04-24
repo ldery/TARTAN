@@ -15,7 +15,6 @@ import os
 
 PATH=os.path.join(os.getcwd(), "dont_stop_pretraining")
 sys.path.insert(1, PATH)
-print('This is the path : ', PATH)
 from models import BasicClassifierWithF1
 from data.dataset_readers.text_classification_json_reader_with_sampling import TextClassificationJsonReaderWithSampling
 from modules.seq2vec_encoders.cls_pooler import CLSPooler
