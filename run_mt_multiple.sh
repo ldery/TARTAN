@@ -3,7 +3,7 @@ outdir=$2
 device=$3
 start=$4
 end=$5
-metric='f1'  # Use accuracy for chemprot and hyperpartisan
+metric=$6 # Use {accuracy} for chemprot and hyperpartisan and {f1} for citation_intent and sciie
 
 for k in $(seq $start $end)
 do

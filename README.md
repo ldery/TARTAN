@@ -27,11 +27,19 @@ url={https://openreview.net/forum?id=2bO2x8NAIMB}
 This repo builds off the Don't Stop Pre-training paper repo [here](https://github.com/allenai/dont-stop-pretraining). 
 Please follow their installation instructions. Repeated here for ease:
 
+```bash
 conda env create -f environment.yml
 conda activate domains
+```
 
 ## Running
 Our experiments were run on A6000 and A100 gpus which have > 40G gpu memory. To ensure that batches fit into memory, consider modifying the following variables
+
+```bash
+--classf_iter_batchsz   # Batch Size for primary task. Effective batchsize is  (classf_iter_batchsz * gradient_accumulation_steps)
+--per_gpu_train_batch_size  # Batch Size for auxiliary tasks. Effective batchsize is  (per_gpu_train_batch_size * gradient_accumulation_steps)
+--gradient_accumulation_steps # Number of timesteps to accumulate gradient over
+```
 
 ### To obtain results on sample datasets
 
